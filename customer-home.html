@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoodLoop - หน้าหลัก</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <!-- แถบด้านบน: โลโก้ + ค้นหาร้านค้า/สินค้า + ไอคอนตะกร้า/ประวัติ/แจ้งเตือน/โปรไฟล์ -->
+  <header class="topbar">
+    <div class="container">
+      <a class="logo-text" href="#" data-act="go" data-v="home"><img src="images/logo-icon.png" alt=""><img src="images/logo-text.png" alt="FoodLoop"></a>
+
+      <div class="search"><input id="q" type="text" placeholder="ค้นหาร้านค้า เมนู หรือสินค้า..."></div>
+
+      <button class="nav-burger" id="navBtn" aria-label="เมนู"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="dot-sm" id="burgerDot" hidden></span></button>
+
+      <div class="nav-icons">
+        <!-- ตะกร้า -->
+        <button class="nav-ic" data-act="go" data-v="cart" title="ตะกร้า"><svg viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.600 7.600-1.400 2.400A2 2 0 0 0 7 17h12v-2H7.400l1.100-2h7.500a2 2 0 0 0 1.700-1l3.600-6.500A1 1 0 0 0 20.400 4H5.200l-.9-2H1z"/></svg><span class="badge-n" id="cartDot" hidden></span></button>
+
+        <!-- ร้านโปรด -->
+        <button class="nav-ic" data-act="go" data-v="favs" title="ร้านโปรด"><svg viewBox="0 0 24 24"><path d="M12 21s-7.500-4.600-9.600-9.200C1 8.700 2.700 5 6.200 5c2 0 3.300 1 5.800 3.200C14.500 6 15.800 5 17.800 5c3.500 0 5.200 3.700 3.800 6.800C19.500 16.400 12 21 12 21z"/></svg></button>
+
+        <!-- ร้านค้าทั้งหมด -->
+        <button class="nav-ic" data-act="shops" title="ร้านค้าทั้งหมด"><svg viewBox="0 0 24 24"><path d="M3 9l1.500-5h15L21 9v1a3 3 0 0 1-5.500 1.700 3 3 0 0 1-5 0A3 3 0 0 1 5 11.700 3 3 0 0 1 3 10V9zm2 4.200V21h14v-7.800a4.800 4.800 0 0 1-.5.100 4.900 4.900 0 0 1-3.500-1.500 4.900 4.900 0 0 1-7 0A4.900 4.900 0 0 1 5.500 13.300H5z"/></svg></button>
+
+        <!-- แจ้งเตือน (กดแล้วมีเมนูย่อย) -->
+        <div class="nav-dd">
+          <button class="nav-ic" data-act="menu" data-v="Notif" title="แจ้งเตือน"><svg viewBox="0 0 24 24"><path d="M12 22a2.500 2.500 0 0 0 2.500-2.500h-5A2.500 2.500 0 0 0 12 22zm7-6v-5c0-3.100-1.600-5.600-4.500-6.300V4a2.500 2.500 0 0 0-5 0v.7C6.600 5.400 5 7.900 5 11v5l-2 2v1h18v-1l-2-2z"/></svg><span class="dot-sm" id="notifDot" hidden></span><span class="caret">▾</span></button>
+          <div class="dd" id="ddNotif" hidden></div>
+        </div>
+
+        <!-- บัญชีผู้ใช้ (กดแล้วมีเมนูย่อย) -->
+        <div class="nav-dd">
+          <button class="nav-ic" data-act="menu" data-v="User" title="บัญชีของฉัน"><span class="avatar" id="avatar">S</span><span class="caret">▾</span></button>
+          <div class="dd" id="ddUser" hidden>
+            <a href="#" data-act="go" data-v="profile">โปรไฟล์ของฉัน</a>
+            <a href="#" data-act="go" data-v="orders">ประวัติการจอง</a>
+            <a href="#" data-act="go" data-v="favs">ร้านโปรด</a>
+            <a href="#" data-act="logout">ออกจากระบบ</a>
+          </div>
+        </div>
+      </div></div>
+    <!-- แถบหมวดหมู่ (สร้างโดย js/customer.js) -->
+    <nav class="catbar" id="catbar"></nav>
+  </header>
+
+  <!-- เนื้อหาหลัก: ถูกสร้างโดย js/customer.js (แก้หน้าตาของแต่ละส่วนในไฟล์นั้น) -->
+  <main class="container" id="app"></main>
+
+  <footer class="footer">เลือกของอร่อยจากร้านที่คุณชอบ และช่วยลดขยะอาหารไปด้วยกัน </footer>
+
+  <script src="js/common.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="js/customer.js"></script>
+</body>
+</html>
+
+
+

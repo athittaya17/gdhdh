@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoodLoop - เข้าสู่ระบบลูกค้า</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="login-page" data-role="customer">
+  <main class="login-card">
+    <div class="brand">
+      <img class="brand-img" src="images/logo-full.png" alt="FoodLoop">
+      <p>"อร่อยได้...ไม่ต้องทิ้ง"</p>
+    </div>
+
+    <nav class="role-tabs">
+      <a class="active" href="login-customer.html">ลูกค้า</a>
+      <a href="login-shop.html">ร้านค้า</a>
+      <a href="login-admin.html">ผู้ดูแลระบบ</a>
+    </nav>
+
+    <!-- ===== เข้าสู่ระบบ ===== -->
+    <div id="loginBox">
+      <h2>เข้าสู่ระบบลูกค้า</h2>
+      <form id="loginForm">
+        <div class="field"><label>อีเมล</label><input name="email" type="text" placeholder="กรอกอีเมล" required></div>
+        <div class="field"><label>รหัสผ่าน</label><input name="pass" type="password" placeholder="กรอกรหัสผ่าน" required></div>
+        <div class="err" id="loginErr"></div>
+        <button class="btn" type="submit">เข้าสู่ระบบ</button>
+      </form>
+      <p class="login-extra">ยังไม่มีบัญชี? <button class="link-btn" data-show="reg">สมัครสมาชิก</button></p>
+      <div class="hint">บัญชีทดลอง: <b>customer@demo.com</b> / <b>1234</b></div>
+    </div>
+
+    <!-- ===== สมัครสมาชิกลูกค้า ===== -->
+    <div id="regBox" hidden>
+      <h2>สมัครสมาชิกลูกค้า</h2>
+      <form id="regForm">
+        <div class="field"><label>ชื่อ-นามสกุล</label><input name="name" required></div>
+        <div class="field"><label>เบอร์โทร</label><input name="phone" required></div>
+        <div class="field"><label>อีเมล</label><input name="email" type="email" required></div>
+        <div class="field"><label>รหัสผ่าน</label><input name="pass" type="password" required></div>
+        <div class="err" id="regErr"></div>
+        <button class="btn" type="submit">สมัครสมาชิก</button>
+      </form>
+      <p class="login-extra">มีบัญชีแล้ว? <button class="link-btn" data-show="login">เข้าสู่ระบบ</button></p>
+    </div>
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
+

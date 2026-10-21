@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoodLoop - ร้านค้า</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="dash">
+  <header class="m-bar">
+    <button class="menu-btn" id="menuBtn" aria-label="เมนู"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    FoodLoop
+  </header>
+  <div class="side-bg"></div>
+  <!-- เมนูด้านข้าง: เพิ่ม/ลดเมนูได้ (data-v ต้องตรงกับชื่อใน js/shop.js → views) -->
+  <aside class="sidebar">
+    <a class="logo-text" href="#" data-act="go" data-v="dashboard"><span class="logo-chip"><img src="images/logo-icon.png" alt=""></span> FoodLoop</a>
+    <div class="role" id="shopName">ร้านค้า</div>
+    <nav id="nav">
+      <a data-act="go" data-v="dashboard">Dashboard</a>
+      <a data-act="go" data-v="products">จัดการสินค้า</a>
+      <a data-act="go" data-v="orders">คำสั่งจอง <span class="nav-count" id="orderCount" hidden></span></a>
+      <a data-act="go" data-v="scan">ยืนยันคำสั่งจอง</a>
+      <a data-act="go" data-v="settings">ตั้งค่าร้าน</a>
+    </nav>
+    <div class="side-foot"><a class="logout-link" data-act="logout">ออกจากระบบ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v9"/><path d="M6.4 6.4a8 8 0 1 0 11.200 0"/></svg></a></div>
+  </aside>
+  <main class="dash-main" id="app"></main>
+</div>
+<script src="js/common.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>
+
+

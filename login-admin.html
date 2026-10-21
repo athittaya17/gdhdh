@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoodLoop - เข้าสู่ระบบผู้ดูแลระบบ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="login-page" data-role="admin">
+  <main class="login-card">
+    <div class="brand">
+      <img class="brand-img" src="images/logo-full.png" alt="FoodLoop">
+      <p>"อร่อยได้...ไม่ต้องทิ้ง"</p>
+    </div>
+
+    <nav class="role-tabs">
+      <a href="login-customer.html">ลูกค้า</a>
+      <a href="login-shop.html">ร้านค้า</a>
+      <a class="active" href="login-admin.html">ผู้ดูแลระบบ</a>
+    </nav>
+
+    <!-- ===== เข้าสู่ระบบ ===== -->
+    <div id="loginBox">
+      <h2>เข้าสู่ระบบผู้ดูแลระบบ</h2>
+      <form id="loginForm">
+        <div class="field"><label>อีเมล</label><input name="email" type="text" placeholder="กรอกอีเมลผู้ดูแล" required></div>
+        <div class="field"><label>รหัสผ่าน</label><input name="pass" type="password" placeholder="กรอกรหัสผ่าน" required></div>
+        <div class="err" id="loginErr"></div>
+        <button class="btn" type="submit">เข้าสู่ระบบ</button>
+      </form>
+
+      <div class="hint">บัญชีทดลอง: <b>admin@demo.com</b> / <b>admin</b></div>
+    </div>
+
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
+

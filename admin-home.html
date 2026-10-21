@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoodLoop - ผู้ดูแลระบบ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="dash">
+  <header class="m-bar">
+    <button class="menu-btn" id="menuBtn" aria-label="เมนู"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    FoodLoop
+  </header>
+  <div class="side-bg"></div>
+  <!-- เมนูด้านข้าง: data-v ต้องตรงกับชื่อใน js/admin.js → views -->
+  <aside class="sidebar">
+    <a class="logo-text" href="#" data-act="go" data-v="dashboard"><span class="logo-chip"><img src="images/logo-icon.png" alt=""></span> FoodLoop</a>
+    <div class="role">ผู้ดูแลระบบ (Admin)</div>
+    <nav id="nav">
+      <a data-act="go" data-v="dashboard">Dashboard ภาพรวม</a>
+      <a data-act="go" data-v="shops">จัดการร้านค้า / อนุมัติ <span class="nav-count" id="pendCount" hidden></span></a>
+      <a data-act="go" data-v="users">จัดการลูกค้า</a>
+      <a data-act="go" data-v="reports">ตรวจสอบรายการ / ข้อร้องเรียน <span class="nav-count" id="repCount" hidden></span></a>
+      <a data-act="go" data-v="stats">รายงานและสถิติ</a>
+      <a data-act="go" data-v="settings">ตั้งค่าระบบ</a>
+    </nav>
+    <div class="side-foot"><a class="logout-link" data-act="logout">ออกจากระบบ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v9"/><path d="M6.4 6.4a8 8 0 1 0 11.200 0"/></svg></a></div>
+  </aside>
+  <main class="dash-main" id="app"></main>
+</div>
+<script src="js/common.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
+
+
